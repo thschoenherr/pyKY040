@@ -114,6 +114,8 @@ class Encoder:
             assert isinstance(params['sw_debounce_time'], int) or isinstance(params['sw_debounce_time'], float)
             self.sw_debounce_time = params['sw_debounce_time']
             self.warnFloatDepreciation(params['sw_debounce_time'])
+        if 'initial_pos' in params:
+            self.counter = params['initial_pos']
 
     def _switch_press(self):
         now = time() * 1000
